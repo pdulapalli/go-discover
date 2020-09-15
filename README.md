@@ -1,6 +1,27 @@
 # go-discover
 
+## Purpose
+
+Enable discovery of local mDNS service broadcasts with zero additional dependencies.
 Extremely bare-bones wrapper around [Hashicorp mDNS for Go](https://github.com/hashicorp/mdns)
+
+## Building
+
+NOTE: For the greatest likelihood of compatibility, it is recommended to build
+on the same CPU architecture that the intended target environment will use.
+
+Please ensure that you have a working installation of Docker. Locate the
+relevant instructions for your Operating System at
+[the official Docker website](https://docs.docker.com/install).
+
+### Ubuntu/Debian Targets
+```
+docker pull golang:1.14.2-stretch
+docker run -t -v $(pwd):/workenv -w /workenv golang:1.14.2-stretch go build -o discover discover.go
+```
+
+If the above commands are successful, an executable named `discover` should
+appear.
 
 ## Usage
 
